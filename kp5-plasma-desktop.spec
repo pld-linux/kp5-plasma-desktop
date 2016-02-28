@@ -1,18 +1,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.4.0
+%define		kdeplasmaver	5.5.4
 %define		qtver		5.3.2
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.4.0
+Version:	5.5.4
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	105aa6d93f32ad99b7afa0c7674aa795
+# Source0-md5:	2ec4ddd309582c91c39f1921415cc059
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -127,9 +127,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_lookandfeel.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_splashscreen.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcmspellchecking.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kded_keyboard.so
+#%%attr(755,root,root) %{_libdir}/qt5/plugins/kded_keyboard.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kded_touchpad.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/keyboard_layout_widget.so
+#%%attr(755,root,root) %{_libdir}/qt5/plugins/keyboard_layout_widget.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/device_automounter.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/keyboard.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/libkcm_device_automounter.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kfontviewpart.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kio_fonts.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/libkcm_translations.so
@@ -140,9 +143,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt5/qml/org/kde/plasma/private/kicker
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/private/kicker/libkickerplugin.so
 %{_libdir}/qt5/qml/org/kde/plasma/private/kicker/qmldir
-%dir %{_libdir}/qt5/qml/org/kde/plasma/private/kickoff
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/private/kickoff/libkickoffplugin.so
-%{_libdir}/qt5/qml/org/kde/plasma/private/kickoff/qmldir
+#%%dir %{_libdir}/qt5/qml/org/kde/plasma/private/kickoff
+#%%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/private/kickoff/libkickoffplugin.so
+#%%{_libdir}/qt5/qml/org/kde/plasma/private/kickoff/qmldir
 %dir %{_libdir}/qt5/qml/org/kde/plasma/private/pager
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/private/pager/libpagerplugin.so
 %{_libdir}/qt5/qml/org/kde/plasma/private/pager/qmldir
@@ -227,7 +230,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/kcmlaunch.desktop
 %{_datadir}/kservices5/kcmnotify.desktop
 %{_datadir}/kservices5/kcmsmserver.desktop
-%{_datadir}/kservices5/kded/keyboard.desktop
+#%%{_datadir}/kservices5/kded/keyboard.desktop
 %{_datadir}/kservices5/kded/touchpad.desktop
 %{_datadir}/kservices5/keys.desktop
 %{_datadir}/kservices5/kfontviewpart.desktop
@@ -305,3 +308,6 @@ rm -rf $RPM_BUILD_ROOT
 /etc/xdg/kfontinst.knsrc
 /etc/xdg/plasma-themes.knsrc
 /etc/xdg/xcursor.knsrc
+# devel
+%attr(755,root,root) %{_libdir}/libkfontinst.so
+%attr(755,root,root) %{_libdir}/libkfontinstui.so
