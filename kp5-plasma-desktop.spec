@@ -8,7 +8,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.11.2
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -34,6 +34,7 @@ BuildRequires:	kf5-kpeople-devel
 BuildRequires:	kf5-krunner-devel
 BuildRequires:	kf5-kwallet-devel
 BuildRequires:	kf5-plasma-framework-devel
+BuildRequires:	kp5-breeze-devel
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	xorg-driver-input-evdev-devel
 BuildRequires:	xorg-driver-input-synaptics-devel
