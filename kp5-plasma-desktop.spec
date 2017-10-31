@@ -15,6 +15,7 @@ Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{versi
 # Source0-md5:	b9d8aa7f4e94fba10a47d0b4768c1029
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Svg-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	fontconfig-devel
 BuildRequires:	kf5-attica-devel
