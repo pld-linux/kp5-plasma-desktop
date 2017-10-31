@@ -14,11 +14,15 @@ Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	b9d8aa7f4e94fba10a47d0b4768c1029
 URL:		http://www.kde.org/
+BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
+BuildRequires:	Qt5Sql-devel >= %{qtver}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
+BuildRequires:	docbook-dtd45-xml
+BuildRequires:	docbook-style-xsl
 BuildRequires:	fontconfig-devel
 BuildRequires:	kf5-attica-devel
 BuildRequires:	kf5-kactivities-stats-devel
@@ -38,7 +42,10 @@ BuildRequires:	kf5-krunner-devel
 BuildRequires:	kf5-kwallet-devel
 BuildRequires:	kf5-plasma-framework-devel
 BuildRequires:	kp5-breeze-devel
+BuildRequires:	phonon-qt5-devel
 BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	udev-devel
+BuildRequires:	xcb-util-image-devel
 BuildRequires:	xorg-driver-input-evdev-devel
 BuildRequires:	xorg-driver-input-synaptics-devel
 BuildRequires:	xorg-lib-libXft-devel
