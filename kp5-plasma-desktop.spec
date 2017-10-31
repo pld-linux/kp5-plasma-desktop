@@ -16,6 +16,7 @@ Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{versi
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	fontconfig-devel
