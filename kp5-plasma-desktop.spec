@@ -51,6 +51,7 @@ BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	scim-devel
 BuildRequires:	udev-devel
 BuildRequires:	xcb-util-image-devel
+BuildRequires:	xcb-util-keysyms-devel
 BuildRequires:	xorg-driver-input-evdev-devel
 BuildRequires:	xorg-driver-input-synaptics-devel
 BuildRequires:	xorg-lib-libXft-devel
