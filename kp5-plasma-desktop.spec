@@ -20,10 +20,12 @@ BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
 BuildRequires:	Qt5Sql-devel >= %{qtver}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
+BuildRequires:	boost-devel
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	docbook-dtd45-xml
 BuildRequires:	docbook-style-xsl
 BuildRequires:	fontconfig-devel
+BuildRequires:	ibus-devel
 BuildRequires:	kf5-attica-devel
 BuildRequires:	kf5-kactivities-stats-devel
 BuildRequires:	kf5-kauth-devel
@@ -42,13 +44,17 @@ BuildRequires:	kf5-krunner-devel
 BuildRequires:	kf5-kwallet-devel
 BuildRequires:	kf5-plasma-framework-devel
 BuildRequires:	kp5-breeze-devel
+BuildRequires:	libcanberra-devel
 BuildRequires:	phonon-qt5-devel
+BuildRequires:	pulseaudio-devel
 BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	scim-devel
 BuildRequires:	udev-devel
 BuildRequires:	xcb-util-image-devel
 BuildRequires:	xorg-driver-input-evdev-devel
 BuildRequires:	xorg-driver-input-synaptics-devel
 BuildRequires:	xorg-lib-libXft-devel
+BuildRequires:	xorg-lib-libXcursor-devel
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
