@@ -109,10 +109,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/knetattach
 %attr(755,root,root) %{_bindir}/krdb
 %attr(755,root,root) %{_bindir}/solid-action-desktop-gen
-%{_libdir}/kauth/fontinst
-%{_libdir}/kauth/fontinst_helper
-%{_libdir}/kauth/fontinst_x11
-%{_libdir}/kauth/kcmdatetimehelper
+%{_libexecdir}/kauth/fontinst
+%{_libexecdir}/kauth/fontinst_helper
+%{_libexecdir}/kauth/fontinst_x11
+%{_libexecdir}/kauth/kcmdatetimehelper
 %{_libdir}/kconf_update_bin/krdb_clearlibrarypath
 %{_libdir}/kfontprint
 %{_libdir}/kimpanel-ibus-panel
