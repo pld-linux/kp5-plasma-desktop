@@ -8,7 +8,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.11.2
-Release:	3
+Release:	4
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -121,15 +121,16 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/knetattach
 %attr(755,root,root) %{_bindir}/krdb
 %attr(755,root,root) %{_bindir}/solid-action-desktop-gen
-%{_libexecdir}/kauth/fontinst
-%{_libexecdir}/kauth/fontinst_helper
-%{_libexecdir}/kauth/fontinst_x11
-%{_libexecdir}/kauth/kcmdatetimehelper
+%attr(755,root,root) %{_libexecdir}/kfontprint
+%attr(755,root,root) %{_libexecdir}/kimpanel-ibus-panel
+%attr(755,root,root) %{_libexecdir}/kimpanel-ibus-panel-launcher
+%attr(755,root,root) %{_libexecdir}/kimpanel-scim-panel
+%attr(755,root,root) %{_libexecdir}/plasma-changeicons
+%attr(755,root,root) %{_libexecdir}/kauth/fontinst
+%attr(755,root,root) %{_libexecdir}/kauth/fontinst_helper
+%attr(755,root,root) %{_libexecdir}/kauth/fontinst_x11
+%attr(755,root,root) %{_libexecdir}/kauth/kcmdatetimehelper
 %{_libdir}/kconf_update_bin/krdb_clearlibrarypath
-%{_libdir}/kfontprint
-%{_libdir}/kimpanel-ibus-panel
-%{_libdir}/kimpanel-ibus-panel-launcher
-%{_libdir}/kimpanel-scim-panel
 %{_libdir}/libkdeinit5_kaccess.so
 %{_libdir}/libkfontinst.so
 %{_libdir}/libkfontinst.so.5
@@ -137,7 +138,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkfontinstui.so
 %{_libdir}/libkfontinstui.so.5
 %{_libdir}/libkfontinstui.so.5.*.*
-%{_libdir}/plasma-changeicons
 %{_libdir}/qt5/plugins/attica_kde.so
 %{_libdir}/qt5/plugins/fontthumbnail.so
 %{_libdir}/qt5/plugins/kcm_access.so
