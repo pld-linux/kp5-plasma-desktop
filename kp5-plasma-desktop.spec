@@ -8,7 +8,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.11.2
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -27,11 +27,17 @@ BuildRequires:	docbook-style-xsl
 BuildRequires:	fontconfig-devel
 BuildRequires:	ibus-devel
 BuildRequires:	kf5-attica-devel
+BuildRequires:	kf5-baloo-devel
+BuildRequires:	kf5-extra-cmake-modules
+BuildRequires:	kf5-kactivities-devel
 BuildRequires:	kf5-kactivities-stats-devel
+BuildRequires:	kf5-karchive-devel
 BuildRequires:	kf5-kauth-devel
 BuildRequires:	kf5-kcmutils-devel
+BuildRequires:	kf5-kconfigwidgets-devel
 BuildRequires:	kf5-kdbusaddons-devel
 BuildRequires:	kf5-kdeclarative-devel
+BuildRequires:	kf5-kded-devel
 BuildRequires:	kf5-kdelibs4support-devel
 BuildRequires:	kf5-kdoctools-devel
 BuildRequires:	kf5-kglobalaccel-devel
@@ -42,8 +48,14 @@ BuildRequires:	kf5-knotifyconfig-devel
 BuildRequires:	kf5-kpeople-devel
 BuildRequires:	kf5-krunner-devel
 BuildRequires:	kf5-kwallet-devel
+BuildRequires:	kf5-kwindowsystem-devel
 BuildRequires:	kf5-plasma-framework-devel
+BuildRequires:	kp5-plasma-workspace-devel
+BuildRequires:	kf5-kservice-devel
+BuildRequires:	kf5-kxmlgui-devel
 BuildRequires:	kp5-breeze-devel
+BuildRequires:	kp5-kscreenlocker-devel
+BuildRequires:	kp5-kwin-devel
 BuildRequires:	libcanberra-devel
 BuildRequires:	phonon-qt5-devel
 BuildRequires:	pulseaudio-devel
