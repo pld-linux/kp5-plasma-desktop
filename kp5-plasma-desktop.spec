@@ -1,18 +1,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.14.5
+%define		kdeplasmaver	5.15.3
 %define		qtver		5.9.0
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.14.5
+Version:	5.15.3
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	3123177eee26c84879b551eaa5907a17
+# Source0-md5:	09c885bbdf0c7193f7ec7a6c6abc8e27
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -57,6 +57,7 @@ BuildRequires:	kp5-kscreenlocker-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-kwin-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-plasma-workspace-devel
 BuildRequires:	libcanberra-devel
+BuildRequires:	ninja
 BuildRequires:	phonon-qt5-devel
 BuildRequires:	pulseaudio-devel
 BuildRequires:	rpmbuild(macros) >= 1.164
@@ -81,17 +82,16 @@ KDE Plasma Desktop.
 
 %build
 install -d build
+rm -rf po/id
 cd build
-%cmake \
+%cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	../
-%{__make}
+%ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-%{__make} -C build/ install \
-        DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{kpname} --all-name --with-kde
 
@@ -736,7 +736,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/kcms/kcm_icons.so
 %{_libdir}/qt5/plugins/kcms/kcm_launchfeedback.so
 %{_libdir}/qt5/plugins/kcms/kcm_nightcolor.so
-%{_libdir}/qt5/plugins/kcms/kcm_translations.so
 %{_libdir}/qt5/plugins/kcms/kcm_workspace.so
 %{_libdir}/qt5/plugins/libkcm_qtquicksettings.so
 %dir %{_datadir}/kpackage/kcms/kcm5_icons
@@ -777,12 +776,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_nightcolor/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_nightcolor/metadata.desktop
 %{_datadir}/kpackage/kcms/kcm_nightcolor/metadata.json
-%dir %{_datadir}/kpackage/kcms/kcm_translations
-%dir %{_datadir}/kpackage/kcms/kcm_translations/contents
-%dir %{_datadir}/kpackage/kcms/kcm_translations/contents/ui
-%{_datadir}/kpackage/kcms/kcm_translations/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_translations/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_translations/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_workspace
 %dir %{_datadir}/kpackage/kcms/kcm_workspace/contents
 %dir %{_datadir}/kpackage/kcms/kcm_workspace/contents/ui
@@ -794,7 +787,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/kcm_icons.desktop
 %{_datadir}/kservices5/kcm_launchfeedback.desktop
 %{_datadir}/kservices5/kcm_nightcolor.desktop
-%{_datadir}/kservices5/kcm_translations.desktop
 %{_datadir}/kservices5/kcm_workspace.desktop
 %{_datadir}/kservices5/qtquicksettings.desktop
 %dir %{_datadir}/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/code
@@ -809,3 +801,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/Badge.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/code/layout.js
 %{_datadir}/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/code/tools.js
+%{_datadir}/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/KickoffListView.qml
