@@ -8,7 +8,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.15.3
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -113,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 /etc/xdg/plasma-themes.knsrc
 /etc/xdg/xcursor.knsrc
 %attr(755,root,root) %{_bindir}/kaccess
-#%%attr(755,root,root) %{_bindir}/kapplymousetheme
+%attr(755,root,root) %{_bindir}/kapplymousetheme
 %attr(755,root,root) %{_bindir}/kcm-touchpad-list-devices
 %attr(755,root,root) %{_bindir}/kcolorschemeeditor
 %attr(755,root,root) %{_bindir}/kfontinst
@@ -161,6 +161,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/kcm_keys.so
 %{_libdir}/qt5/plugins/kcm_knotify.so
 #%%{_libdir}/qt5/plugins/kcm_launch.so
+%{_libdir}/qt5/plugins/kcm_mouse.so
 %{_libdir}/qt5/plugins/kcm_phonon.so
 %{_libdir}/qt5/plugins/kcm_plasmasearch.so
 %{_libdir}/qt5/plugins/kcm_smserver.so
