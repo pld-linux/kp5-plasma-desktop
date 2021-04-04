@@ -8,7 +8,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.21.3
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -737,6 +737,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/solid/devices/solid-device-StorageDrive.desktop
 %{_datadir}/solid/devices/solid-device-StorageVolume.desktop
 %attr(755,root,root) %{_libdir}/qt5/plugins/attica_kde.so
+%dir %{_datadir}/accounts/providers
+%dir %{_datadir}/accounts/providers/kde
 %{_datadir}/accounts/providers/kde/opendesktop.provider
 %{_datadir}/accounts/services/kde/opendesktop-rating.service
 %attr(755,root,root) %{_datadir}/kconf_update/kcminputrc_fix_botched_5_21_0.py
