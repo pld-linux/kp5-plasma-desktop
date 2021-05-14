@@ -26,6 +26,7 @@ BuildRequires:	docbook-dtd45-xml
 BuildRequires:	docbook-style-xsl
 BuildRequires:	fontconfig-devel
 BuildRequires:	ibus-devel
+BuildRequires:	ka5-kaccounts-integration-devel
 BuildRequires:	kf5-attica-devel
 BuildRequires:	kf5-baloo-devel
 BuildRequires:	kf5-extra-cmake-modules
@@ -42,6 +43,7 @@ BuildRequires:	kf5-kdelibs4support-devel
 BuildRequires:	kf5-kdoctools-devel
 BuildRequires:	kf5-kglobalaccel-devel
 BuildRequires:	kf5-ki18n-devel
+BuildRequires:	kf5-kirigami2-devel
 BuildRequires:	kf5-knewstuff-devel
 BuildRequires:	kf5-knotifications-devel
 BuildRequires:	kf5-knotifyconfig-devel
@@ -52,8 +54,10 @@ BuildRequires:	kf5-kwallet-devel
 BuildRequires:	kf5-kwindowsystem-devel
 BuildRequires:	kf5-kxmlgui-devel
 BuildRequires:	kf5-plasma-framework-devel
+BuildRequires:	kf5-qqc2-desktop-style-devel
 BuildRequires:	kp5-breeze-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-kscreenlocker-devel >= %{kdeplasmaver}
+BuildRequires:	kp5-libksysguard-devel
 BuildRequires:	kp5-kwin-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-plasma-workspace-devel
 BuildRequires:	libcanberra-devel
@@ -65,6 +69,7 @@ BuildRequires:	scim-devel
 BuildRequires:	udev-devel
 BuildRequires:	xcb-util-image-devel
 BuildRequires:	xcb-util-keysyms-devel
+BuildRequires:	xkeyboard-config
 BuildRequires:	xorg-driver-input-evdev-devel
 BuildRequires:	xorg-driver-input-synaptics-devel
 BuildRequires:	xorg-lib-libXcursor-devel
