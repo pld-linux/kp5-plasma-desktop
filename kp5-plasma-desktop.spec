@@ -1,18 +1,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.21.5
+%define		kdeplasmaver	5.22.0
 %define		qtver		5.9.0
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.21.5
-Release:	2
+Version:	5.22.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	2874877366a8a153f8d7934a8b32148f
+# Source0-md5:	dffa0d0009bd7bc7797c240647c1acb6
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -57,8 +57,8 @@ BuildRequires:	kf5-plasma-framework-devel
 BuildRequires:	kf5-qqc2-desktop-style-devel
 BuildRequires:	kp5-breeze-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-kscreenlocker-devel >= %{kdeplasmaver}
-BuildRequires:	kp5-libksysguard-devel
 BuildRequires:	kp5-kwin-devel >= %{kdeplasmaver}
+BuildRequires:	kp5-libksysguard-devel
 BuildRequires:	kp5-plasma-workspace-devel
 BuildRequires:	libcanberra-devel
 BuildRequires:	ninja
@@ -127,24 +127,19 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/krunner-plugininstaller
 %attr(755,root,root) %{_bindir}/solid-action-desktop-gen
 %attr(755,root,root) %{_bindir}/tastenbrett
-%attr(755,root,root) %{_libdir}/libkdeinit5_kaccess.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_activities.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_clock.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_desktoppaths.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_formats.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_joystick.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_keyboard.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_plasmasearch.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_solid_actions.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_access.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_autostart.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_baloofile.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_componentchooser.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_kded.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_keys.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_launchfeedback.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_nightcolor.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_notifications.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_smserver.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_splashscreen.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_users.so
@@ -258,12 +253,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm5_kded/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm5_kded/metadata.desktop
 %{_datadir}/kpackage/kcms/kcm5_kded/metadata.json
-%dir %{_datadir}/kpackage/kcms/kcm_autostart
-%dir %{_datadir}/kpackage/kcms/kcm_autostart/contents
-%dir %{_datadir}/kpackage/kcms/kcm_autostart/contents/ui
-%{_datadir}/kpackage/kcms/kcm_autostart/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_autostart/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_autostart/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_baloofile
 %dir %{_datadir}/kpackage/kcms/kcm_baloofile/contents
 %dir %{_datadir}/kpackage/kcms/kcm_baloofile/contents/ui
@@ -290,26 +279,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_launchfeedback/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_launchfeedback/metadata.desktop
 %{_datadir}/kpackage/kcms/kcm_launchfeedback/metadata.json
-%dir %{_datadir}/kpackage/kcms/kcm_nightcolor
-%dir %{_datadir}/kpackage/kcms/kcm_nightcolor/contents
-%dir %{_datadir}/kpackage/kcms/kcm_nightcolor/contents/ui
-%{_datadir}/kpackage/kcms/kcm_nightcolor/contents/ui/LocationsFixedView.qml
-%{_datadir}/kpackage/kcms/kcm_nightcolor/contents/ui/NumberField.qml
-%{_datadir}/kpackage/kcms/kcm_nightcolor/contents/ui/TimeField.qml
-%{_datadir}/kpackage/kcms/kcm_nightcolor/contents/ui/TimingsView.qml
-%{_datadir}/kpackage/kcms/kcm_nightcolor/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_nightcolor/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_nightcolor/metadata.json
-%dir %{_datadir}/kpackage/kcms/kcm_notifications
-%dir %{_datadir}/kpackage/kcms/kcm_notifications/contents
-%dir %{_datadir}/kpackage/kcms/kcm_notifications/contents/ui
-%{_datadir}/kpackage/kcms/kcm_notifications/contents/ui/ApplicationConfiguration.qml
-%{_datadir}/kpackage/kcms/kcm_notifications/contents/ui/PopupPositionPage.qml
-%{_datadir}/kpackage/kcms/kcm_notifications/contents/ui/ScreenPositionSelector.qml
-%{_datadir}/kpackage/kcms/kcm_notifications/contents/ui/SourcesPage.qml
-%{_datadir}/kpackage/kcms/kcm_notifications/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_notifications/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_notifications/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_smserver
 %dir %{_datadir}/kpackage/kcms/kcm_smserver/contents
 %dir %{_datadir}/kpackage/kcms/kcm_smserver/contents/ui
@@ -349,12 +318,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcmaccess/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcmaccess/metadata.desktop
 %{_datadir}/kpackage/kcms/kcmaccess/metadata.json
-%{_datadir}/kservices5/autostart.desktop
 %{_datadir}/kservices5/clock.desktop
 %{_datadir}/kservices5/componentchooser.desktop
 %{_datadir}/kservices5/desktoppath.desktop
 %{_datadir}/kservices5/device_automounter_kcm.desktop
-%{_datadir}/kservices5/formats.desktop
 %{_datadir}/kservices5/joystick.desktop
 %{_datadir}/kservices5/kcm_access.desktop
 %{_datadir}/kservices5/kcm_activities.desktop
@@ -362,8 +329,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/kcm_keyboard.desktop
 %{_datadir}/kservices5/kcm_keys.desktop
 %{_datadir}/kservices5/kcm_launchfeedback.desktop
-%{_datadir}/kservices5/kcm_nightcolor.desktop
-%{_datadir}/kservices5/kcm_notifications.desktop
 %{_datadir}/kservices5/kcm_plasmasearch.desktop
 %{_datadir}/kservices5/kcm_smserver.desktop
 %{_datadir}/kservices5/kcm_splashscreen.desktop
@@ -749,3 +714,22 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/accounts/services/kde/opendesktop-rating.service
 %attr(755,root,root) %{_datadir}/kconf_update/kcminputrc_fix_botched_5_21_0.py
 %{_datadir}/kconf_update/kcminputrc_fix_botched_5_21_0.upd
+
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_landingpage.so
+%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/emoji/libEmojierDeclarativePlugin.so
+%{_libdir}/qt5/qml/org/kde/plasma/emoji/qmldir
+%{_datadir}/config.kcfg/landingpage_kdeglobalssettings.kcfg
+%dir %{_datadir}/kpackage/kcms/kcm_landingpage
+%dir %{_datadir}/kpackage/kcms/kcm_landingpage/contents
+%dir %{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui
+%{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/FeedbackControls.qml
+%{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/MostUsedIcon.qml
+%{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/Thumbnail.qml
+%{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_landingpage/metadata.desktop
+%{_datadir}/kpackage/kcms/kcm_landingpage/metadata.json
+%{_datadir}/kservices5/kcm_landingpage.desktop
+%{_datadir}/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js
+%{_datadir}/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js
+%{_datadir}/qlogging-categories5/kcm_kded.categories
+%{_datadir}/qlogging-categories5/kcm_keyboard.categories
