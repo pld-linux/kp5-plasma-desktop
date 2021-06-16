@@ -1,18 +1,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.22.0
+%define		kdeplasmaver	5.22.1
 %define		qtver		5.9.0
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.22.0
+Version:	5.22.1
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	dffa0d0009bd7bc7797c240647c1acb6
+# Source0-md5:	9a3464909cacd130dfd8c933094d2399
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -58,8 +58,8 @@ BuildRequires:	kf5-qqc2-desktop-style-devel
 BuildRequires:	kp5-breeze-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-kscreenlocker-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-kwin-devel >= %{kdeplasmaver}
-BuildRequires:	kp5-libksysguard-devel
-BuildRequires:	kp5-plasma-workspace-devel
+BuildRequires:	kp5-libksysguard-devel >= %{kdeplasmaver}
+BuildRequires:	kp5-plasma-workspace-devel >= %{kdeplasmaver}
 BuildRequires:	libcanberra-devel
 BuildRequires:	ninja
 BuildRequires:	phonon-qt5-devel
