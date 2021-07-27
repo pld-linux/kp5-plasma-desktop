@@ -1,18 +1,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.22.3
+%define		kdeplasmaver	5.22.4
 %define		qtver		5.9.0
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.22.3
-Release:	2
+Version:	5.22.4
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	dcd54372e6dc1026e215b3f8025c4d75
+# Source0-md5:	ba7687bdea331a62127f7cc69029c194
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -337,30 +337,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/kcm_workspace.desktop
 %{_datadir}/kservices5/kcmkded.desktop
 %{_datadir}/kservices5/kded/touchpad.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.icontasks.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.keyboardlayout.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.kicker.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.kickoff.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.kimpanel.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.marginsseparator.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.minimizeall.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.pager.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.showActivityManager.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.showdesktop.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.taskmanager.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.trash.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.windowlist.desktop
-%{_datadir}/kservices5/plasma-applet-touchpad.desktop
-%{_datadir}/kservices5/plasma-containment-org.kde.desktopcontainment.desktop
-%{_datadir}/kservices5/plasma-containment-org.kde.panel.desktop
-%{_datadir}/kservices5/plasma-containment-org.kde.plasma.folder.desktop
 %{_datadir}/kservices5/plasma-dataengine-touchpad.desktop
-%{_datadir}/kservices5/plasma-layout-template-org.kde.plasma.desktop.appmenubar.desktop
-%{_datadir}/kservices5/plasma-layout-template-org.kde.plasma.desktop.defaultPanel.desktop
-%{_datadir}/kservices5/plasma-layout-template-org.kde.plasma.desktop.emptyPanel.desktop
-%{_datadir}/kservices5/plasma-package-org.kde.desktoptoolbox.desktop
-%{_datadir}/kservices5/plasma-package-org.kde.paneltoolbox.desktop
-%{_datadir}/kservices5/plasma-shell-org.kde.plasma.desktop.desktop
 %{_datadir}/kservices5/qtquicksettings.desktop
 %{_datadir}/kservices5/solid-actions.desktop
 %{_datadir}/kservices5/spellchecking.desktop
