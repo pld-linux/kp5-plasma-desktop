@@ -8,7 +8,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.22.5
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -122,6 +122,7 @@ rm -rf $RPM_BUILD_ROOT
 /etc/xdg/autostart/kaccess.desktop
 %attr(755,root,root) %{_bindir}/ibus-ui-emojier-plasma
 %attr(755,root,root) %{_bindir}/kaccess
+%attr(755,root,root) %{_bindir}/kapplymousetheme
 %attr(755,root,root) %{_bindir}/kcm-touchpad-list-devices
 %attr(755,root,root) %{_bindir}/knetattach
 %attr(755,root,root) %{_bindir}/krunner-plugininstaller
@@ -132,6 +133,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_desktoppaths.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_joystick.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_keyboard.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_mouse.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_plasmasearch.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_solid_actions.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_access.so
@@ -187,6 +189,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_prefix}/libexec/kimpanel-scim-panel
 %{_desktopdir}/org.kde.knetattach.desktop
 %{_desktopdir}/org.kde.plasma.emojier.desktop
+%dir %{_datadir}/kcmmouse
+%dir %{_datadir}/kcmmouse/pics
+%{_datadir}/kcmmouse/cursor_large_black.pcf.gz
+%{_datadir}/kcmmouse/cursor_large_white.pcf.gz
+%{_datadir}/kcmmouse/cursor_small_white.pcf.gz
+%{_datadir}/kcmmouse/pics/mouse_lh.png
+%{_datadir}/kcmmouse/pics/mouse_rh.png
 %{_datadir}/config.kcfg/kactivitymanagerd_plugins_settings.kcfg
 %{_datadir}/config.kcfg/kactivitymanagerd_settings.kcfg
 %{_datadir}/config.kcfg/kcmaccessibilitybell.kcfg
@@ -337,6 +346,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/kcm_workspace.desktop
 %{_datadir}/kservices5/kcmkded.desktop
 %{_datadir}/kservices5/kded/touchpad.desktop
+%{_datadir}/kservices5/mouse.desktop
 %{_datadir}/kservices5/plasma-dataengine-touchpad.desktop
 %{_datadir}/kservices5/qtquicksettings.desktop
 %{_datadir}/kservices5/solid-actions.desktop
@@ -674,6 +684,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/polkit-1/actions/org.kde.kcontrol.kcmclock.policy
 %{_datadir}/qlogging-categories5/kcmkeys.categories
 %{_datadir}/qlogging-categories5/kcmusers.categories
+%{_datadir}/qlogging-categories5/kcm_mouse.categories
 %{_datadir}/solid/devices/solid-device-Battery.desktop
 %{_datadir}/solid/devices/solid-device-Block.desktop
 %{_datadir}/solid/devices/solid-device-Camera.desktop
