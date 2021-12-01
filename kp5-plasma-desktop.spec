@@ -1,18 +1,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.23.3
+%define		kdeplasmaver	5.23.4
 %define		qtver		5.9.0
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.23.3
-Release:	2
+Version:	5.23.4
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	7ef05981c01ca7046e2816a2685af750
+# Source0-md5:	4f53438f181525c1c64de34e8a2a7539
 URL:		https://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -389,3 +389,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/kf5/kded/kded_touchpad.so
 %{_datadir}/plasma/plasmoids/org.kde.plasma.kickoff
 %{_datadir}/plasma/services/touchpad.operations
+%{_datadir}/plasma/desktoptheme/default/icons/touchpad.svg
+%{_datadir}/plasma/plasmoids/touchpad
