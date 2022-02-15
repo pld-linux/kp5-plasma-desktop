@@ -8,7 +8,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.24.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -338,6 +338,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_libdir}/qt5/plugins/plasma/kcminit
 %{_libdir}/qt5/plugins/plasma/kcminit/kcm_touchpad_init.so
+%dir %{_libdir}/qt5/plugins/plasma/kcms
 %dir %{_libdir}/qt5/plugins/plasma/kcms/systemsettings
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_access.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_baloofile.so
@@ -397,6 +398,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_access/contents/ui/MouseNavigation.qml
 %{_datadir}/kpackage/kcms/kcm_access/contents/ui/ScreenReader.qml
 %{_datadir}/kpackage/kcms/kcm_access/contents/ui/main.qml
+%dir %{_datadir}/kpackage/kcms/kcm_tablet
+%dir %{_datadir}/kpackage/kcms/kcm_tablet/contents
+%dir %{_datadir}/kpackage/kcms/kcm_tablet/contents/ui
 %{_datadir}/kpackage/kcms/kcm_tablet/contents/ui/main.qml
 %{_datadir}/plasma/packages/org.kde.desktoptoolbox/contents/ui/ToolBoxContent.qml
 %{_datadir}/qlogging-categories5/kcm_tablet.categories
