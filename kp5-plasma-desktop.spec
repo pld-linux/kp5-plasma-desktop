@@ -62,6 +62,7 @@ BuildRequires:	kp5-kscreenlocker-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-kwin-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-libksysguard-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-plasma-workspace-devel >= %{kdeplasmaver}
+BuildRequires:	libaccounts-qt5-devel
 BuildRequires:	libcanberra-devel
 BuildRequires:	ninja
 BuildRequires:	phonon-qt5-devel
