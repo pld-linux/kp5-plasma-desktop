@@ -130,6 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 /etc/xdg/autostart/kaccess.desktop
 %attr(755,root,root) %{_bindir}/ibus-ui-emojier-plasma
 %attr(755,root,root) %{_bindir}/kaccess
+%attr(755,root,root) %{_bindir}/kapplymousetheme
 %attr(755,root,root) %{_bindir}/kcm-touchpad-list-devices
 %attr(755,root,root) %{_bindir}/knetattach
 %attr(755,root,root) %{_bindir}/krunner-plugininstaller
@@ -341,6 +342,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/plasmoids/touchpad
 
 %dir %{_libdir}/qt5/plugins/plasma/kcminit
+%{_libdir}/qt5/plugins/plasma/kcminit/kcm_mouse_init.so
 %{_libdir}/qt5/plugins/plasma/kcminit/kcm_touchpad_init.so
 %dir %{_libdir}/qt5/plugins/plasma/kcms
 %dir %{_libdir}/qt5/plugins/plasma/kcms/systemsettings
@@ -352,6 +354,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_keys.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_landingpage.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_launchfeedback.so
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_kcm_mouse.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_smserver.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_splashscreen.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_tablet.so
@@ -379,6 +382,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kcm_keyboard.desktop
 %{_desktopdir}/kcm_keys.desktop
 %{_desktopdir}/kcm_launchfeedback.desktop
+%{_desktopdir}/kcm_mouse.desktop
 %{_desktopdir}/kcm_plasmasearch.desktop
 %{_desktopdir}/kcm_qtquicksettings.desktop
 %{_desktopdir}/kcm_smserver.desktop
@@ -408,3 +412,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_tablet/contents/ui/main.qml
 %{_datadir}/plasma/packages/org.kde.desktoptoolbox/contents/ui/ToolBoxContent.qml
 %{_datadir}/qlogging-categories5/kcm_tablet.categories
+%{_datadir}/qlogging-categories5/kcm_mouse.categories
+%dir %{_datadir}/kcmmouse
+%{_datadir}/kcmmouse/cursor*.pcf.gz
+%{_datadir}/kcmmouse/pics
