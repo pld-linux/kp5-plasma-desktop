@@ -354,7 +354,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_keys.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_landingpage.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_launchfeedback.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_kcm_mouse.so
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_mouse.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_smserver.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_splashscreen.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_tablet.so
