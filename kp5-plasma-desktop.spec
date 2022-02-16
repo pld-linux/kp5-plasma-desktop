@@ -21,6 +21,7 @@ BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
 BuildRequires:	Qt5Quick-devel >= %{qtver}
 BuildRequires:	Qt5Sql-devel >= %{qtver}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
+BuildRequires:	Qt5X11Extras-devel >= %{qtver}
 BuildRequires:	boost-devel
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	docbook-dtd45-xml
