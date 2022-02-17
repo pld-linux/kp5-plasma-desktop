@@ -1,18 +1,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.24.0
+%define		kdeplasmaver	5.24.1
 %define		qtver		5.9.0
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.24.0
-Release:	4
+Version:	5.24.1
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	8c07b6d13e9ed8965abb38f0c3bdfdbf
+# Source0-md5:	48c1c3eeba7c1b61a3b8e2f99b60a3c1
 URL:		https://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -75,6 +75,7 @@ BuildRequires:	xcb-util-image-devel
 BuildRequires:	xcb-util-keysyms-devel
 BuildRequires:	xkeyboard-config
 BuildRequires:	xorg-driver-input-evdev-devel
+BuildRequires:	xorg-driver-input-libinput-devel
 BuildRequires:	xorg-driver-input-synaptics-devel
 BuildRequires:	xorg-lib-libXcursor-devel
 BuildRequires:	xorg-lib-libXft-devel
