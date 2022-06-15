@@ -4,18 +4,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.24.5
+%define		kdeplasmaver	5.25.0
 %define		qtver		5.9.0
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.24.5
-Release:	2
+Version:	5.25.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	c8209bc8147b8e556b59270af9b90666
+# Source0-md5:	2dac1205e5fb46c3f55a4f222edd8031
 URL:		https://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -425,3 +425,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kcmmouse
 %{_datadir}/kcmmouse/cursor*.pcf.gz
 %{_datadir}/kcmmouse/pics
+%{_libdir}/qt5/plugins/plasma/applets/org.kde.plasma.marginsseparator.so
+%{_libdir}/qt5/plugins/plasma/kcms/desktop/kcm_krunnersettings.so
+%{_desktopdir}/kcm_krunnersettings.desktop
+%{_datadir}/config.kcfg/krunnersettingsbase.kcfg
+%{_datadir}/config.kcfg/workspaceoptions_kwinsettings.kcfg
+%{_datadir}/kpackage/kcms/kcm_krunnersettings/contents/ui/main.qml
