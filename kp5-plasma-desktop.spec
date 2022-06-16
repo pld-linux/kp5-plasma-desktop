@@ -11,7 +11,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.25.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -426,8 +426,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kcmmouse/cursor*.pcf.gz
 %{_datadir}/kcmmouse/pics
 %{_libdir}/qt5/plugins/plasma/applets/org.kde.plasma.marginsseparator.so
+%dir %{_libdir}/qt5/plugins/plasma/kcms/desktop
 %{_libdir}/qt5/plugins/plasma/kcms/desktop/kcm_krunnersettings.so
 %{_desktopdir}/kcm_krunnersettings.desktop
 %{_datadir}/config.kcfg/krunnersettingsbase.kcfg
 %{_datadir}/config.kcfg/workspaceoptions_kwinsettings.kcfg
+%dir %{_datadir}/kpackage/kcms/kcm_krunnersettings
+%dir %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents
+%dir %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents/ui
 %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents/ui/main.qml
