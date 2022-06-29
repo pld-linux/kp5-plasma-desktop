@@ -4,18 +4,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.25.1
+%define		kdeplasmaver	5.25.2
 %define		qtver		5.9.0
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.25.1
+Version:	5.25.2
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	ac141b9d49678aaceb3b4eac233538c7
+# Source0-md5:	6140b63a83ffaa14c155dac7eb3ae047
 URL:		https://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
