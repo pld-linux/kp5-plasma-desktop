@@ -4,18 +4,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.25.5
+%define		kdeplasmaver	5.26.0
 %define		qtver		5.15.2
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.25.5
-Release:	2
+Version:	5.26.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	949d09647d0de7959b556c5e00553166
+# Source0-md5:	8cdb64a63bb3b1d12146ffc56c434467
 URL:		https://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -229,11 +229,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml
 %dir %{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab
 %dir %{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog
-%dir %{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/privacyTab
 %{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab/ActivitiesView.qml
 %{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab/main.qml
 %{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog/GeneralTab.qml
-%{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/privacyTab/BlacklistApplicationView.qml
 %{_datadir}/kglobalaccel/org.kde.plasma.emojier.desktop
 %{_datadir}/knotifications5/kaccess.notifyrc
 %{_datadir}/knotifications5/kcm_touchpad.notifyrc
@@ -375,7 +373,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_desktoppaths.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_device_automounter.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_joystick.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_plasmasearch.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_qtquicksettings.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_solid_actions.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcmspellchecking.so
@@ -385,7 +382,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kcm_clock.desktop
 %{_desktopdir}/kcm_componentchooser.desktop
 %{_desktopdir}/kcm_desktoppaths.desktop
-%{_desktopdir}/kcm_device_automounter.desktop
 %{_desktopdir}/kcm_joystick.desktop
 %{_desktopdir}/kcm_kded.desktop
 %{_desktopdir}/kcm_keyboard.desktop
@@ -425,7 +421,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kcmmouse
 %{_datadir}/kcmmouse/cursor*.pcf.gz
 %{_datadir}/kcmmouse/pics
-%{_libdir}/qt5/plugins/plasma/applets/org.kde.plasma.marginsseparator.so
 %dir %{_libdir}/qt5/plugins/plasma/kcms/desktop
 %{_libdir}/qt5/plugins/plasma/kcms/desktop/kcm_krunnersettings.so
 %{_desktopdir}/kcm_krunnersettings.desktop
@@ -435,3 +430,15 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents
 %dir %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents/ui
 %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents/ui/main.qml
+
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_plasmasearch.so
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_recentFiles.so
+%{_desktopdir}/kcm_landingpage.desktop
+%{_desktopdir}/kcm_recentFiles.desktop
+%{_datadir}/config.kcfg/landingpage_feedbacksettings.kcfg
+%{_datadir}/kf5/kcm_recentFiles/workspace/settings/qml/recentFiles/BlacklistApplicationView.qml
+%{_datadir}/kpackage/kcms/kcm_plasmasearch/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_tablet/contents/ui/Output.qml
+%{_datadir}/kpackage/kcms/kcm_tablet/contents/ui/RebindButtons.qml
+%{_datadir}/metainfo/org.kde.plasma.activitypager.appdata.xml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.activitypager/metadata.json
