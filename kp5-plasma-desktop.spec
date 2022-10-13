@@ -11,7 +11,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.26.0
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -436,9 +436,18 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kcm_landingpage.desktop
 %{_desktopdir}/kcm_recentFiles.desktop
 %{_datadir}/config.kcfg/landingpage_feedbacksettings.kcfg
+%dir %{_datadir}/kf5/kcm_recentFiles
+%dir %{_datadir}/kf5/kcm_recentFiles/workspace
+%dir %{_datadir}/kf5/kcm_recentFiles/workspace/settings
+%dir %{_datadir}/kf5/kcm_recentFiles/workspace/settings/qml
+%dir %{_datadir}/kf5/kcm_recentFiles/workspace/settings/qml/recentFiles
 %{_datadir}/kf5/kcm_recentFiles/workspace/settings/qml/recentFiles/BlacklistApplicationView.qml
+%dir %{_datadir}/kpackage/kcms/kcm_plasmasearch
+%dir %{_datadir}/kpackage/kcms/kcm_plasmasearch/contents
+%dir %{_datadir}/kpackage/kcms/kcm_plasmasearch/contents/ui
 %{_datadir}/kpackage/kcms/kcm_plasmasearch/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_tablet/contents/ui/Output.qml
 %{_datadir}/kpackage/kcms/kcm_tablet/contents/ui/RebindButtons.qml
 %{_datadir}/metainfo/org.kde.plasma.activitypager.appdata.xml
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.activitypager
 %{_datadir}/plasma/plasmoids/org.kde.plasma.activitypager/metadata.json
