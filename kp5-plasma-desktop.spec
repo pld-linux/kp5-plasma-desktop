@@ -4,18 +4,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.26.5
+%define		kdeplasmaver	5.27.0
 %define		qtver		5.15.2
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.26.5
+Version:	5.27.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	9c85a12b5fc4593ee3c9c3602b7c1fd7
+# Source0-md5:	ace7c7f0567de486a9fc2f7a52d3b0a2
 URL:		https://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -137,7 +137,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
 /etc/xdg/autostart/kaccess.desktop
-%attr(755,root,root) %{_bindir}/ibus-ui-emojier-plasma
 %attr(755,root,root) %{_bindir}/kaccess
 %attr(755,root,root) %{_bindir}/kapplymousetheme
 %attr(755,root,root) %{_bindir}/kcm-touchpad-list-devices
@@ -190,7 +189,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/config.kcfg/kcmaccessibilitykeyboard.kcfg
 %{_datadir}/config.kcfg/kcmaccessibilitymouse.kcfg
 %{_datadir}/config.kcfg/kcmaccessibilityscreenreader.kcfg
-%{_datadir}/config.kcfg/launchfeedbacksettingsbase.kcfg
 %{_datadir}/config.kcfg/splashscreensettings.kcfg
 %{_datadir}/config.kcfg/workspaceoptions_kdeglobalssettings.kcfg
 %{_datadir}/config.kcfg/workspaceoptions_plasmasettings.kcfg
@@ -241,7 +239,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_baloofile
 %{_datadir}/kpackage/kcms/kcm_componentchooser
 %{_datadir}/kpackage/kcms/kcm_keys
-%{_datadir}/kpackage/kcms/kcm_launchfeedback
 %{_datadir}/kpackage/kcms/kcm_smserver
 %{_datadir}/kpackage/kcms/kcm_splashscreen
 %{_datadir}/kpackage/kcms/kcm_workspace
@@ -336,7 +333,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_landingpage
 %dir %{_datadir}/kpackage/kcms/kcm_landingpage/contents
 %dir %{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui
-%{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/FeedbackControls.qml
 %{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/MostUsedIcon.qml
 %{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/Thumbnail.qml
 %{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/main.qml
@@ -360,7 +356,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_keyboard.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_keys.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_landingpage.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_launchfeedback.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_mouse.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_smserver.so
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_splashscreen.so
@@ -386,7 +381,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kcm_kded.desktop
 %{_desktopdir}/kcm_keyboard.desktop
 %{_desktopdir}/kcm_keys.desktop
-%{_desktopdir}/kcm_launchfeedback.desktop
 %{_desktopdir}/kcm_mouse.desktop
 %{_desktopdir}/kcm_plasmasearch.desktop
 %{_desktopdir}/kcm_qtquicksettings.desktop
@@ -435,7 +429,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_recentFiles.so
 %{_desktopdir}/kcm_landingpage.desktop
 %{_desktopdir}/kcm_recentFiles.desktop
-%{_datadir}/config.kcfg/landingpage_feedbacksettings.kcfg
 %dir %{_datadir}/kf5/kcm_recentFiles
 %dir %{_datadir}/kf5/kcm_recentFiles/workspace
 %dir %{_datadir}/kf5/kcm_recentFiles/workspace/settings
@@ -447,7 +440,13 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_plasmasearch/contents/ui
 %{_datadir}/kpackage/kcms/kcm_plasmasearch/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_tablet/contents/ui/Output.qml
-%{_datadir}/kpackage/kcms/kcm_tablet/contents/ui/RebindButtons.qml
 %{_datadir}/metainfo/org.kde.plasma.activitypager.appdata.xml
 %dir %{_datadir}/plasma/plasmoids/org.kde.plasma.activitypager
 %{_datadir}/plasma/plasmoids/org.kde.plasma.activitypager/metadata.json
+
+%attr(755,root,root) %{_bindir}/plasma-emojier
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_touchscreen.so
+%{_desktopdir}/kcm_touchscreen.desktop
+%{_datadir}/kpackage/kcms/kcm_touchscreen/contents/ui/main.qml
+%{_datadir}/plasma/emoji
+%{_datadir}/qlogging-categories5/kcm_touchscreen.categories
