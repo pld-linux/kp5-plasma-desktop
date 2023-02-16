@@ -11,7 +11,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.27.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -114,6 +114,9 @@ ctest
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/{sr,sr@latin}
+
+# not supported by glibc yet
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
 
 %find_lang %{kpname} --all-name --with-kde
 
@@ -447,6 +450,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/plasma-emojier
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_touchscreen.so
 %{_desktopdir}/kcm_touchscreen.desktop
+%dir %{_datadir}/kpackage/kcms/kcm_touchscreen
+%dir %{_datadir}/kpackage/kcms/kcm_touchscreen/contents
+%dir %{_datadir}/kpackage/kcms/kcm_touchscreen/contents/ui
 %{_datadir}/kpackage/kcms/kcm_touchscreen/contents/ui/main.qml
 %{_datadir}/plasma/emoji
 %{_datadir}/qlogging-categories5/kcm_touchscreen.categories
