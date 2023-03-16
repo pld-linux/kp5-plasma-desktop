@@ -11,7 +11,7 @@
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
 Version:	5.27.3
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -85,12 +85,25 @@ BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-xserver-server-devel
 BuildRequires:	xz
 Requires:	/bin/awk
+Requires:	%{name}-data = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt5dir		%{_libdir}/qt5
 
 %description
 KDE Plasma Desktop.
+
+%package data
+Summary:	Data files for %{kpname}
+Summary(pl.UTF-8):	Dane dla %{kpname}
+Group:		X11/Applications
+BuildArch:	noarch
+
+%description data
+Data files for %{kpname}.
+
+%description data -l pl.UTF-8
+Dane dla %{kpname}.
 
 %prep
 %setup -q -n %{kpname}-%{version}
@@ -137,7 +150,7 @@ rm -rf $RPM_BUILD_ROOT
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files -f %{kpname}.lang
+%files
 %defattr(644,root,root,755)
 /etc/xdg/autostart/kaccess.desktop
 %attr(755,root,root) %{_bindir}/kaccess
@@ -184,6 +197,47 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_prefix}/libexec/kimpanel-ibus-panel
 %attr(755,root,root) %{_prefix}/libexec/kimpanel-ibus-panel-launcher
 %attr(755,root,root) %{_prefix}/libexec/kimpanel-scim-panel
+%attr(755,root,root) %{_libdir}/qt5/plugins/attica_kde.so
+%dir %{_libdir}/qt5/qml/org/kde/plasma/emoji
+%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/emoji/libEmojierDeclarativePlugin.so
+%{_libdir}/qt5/qml/org/kde/plasma/emoji/qmldir
+%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/kded_touchpad.so
+%dir %{_libdir}/qt5/plugins/plasma/kcminit
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcminit/kcm_mouse_init.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcminit/kcm_touchpad_init.so
+%dir %{_libdir}/qt5/plugins/plasma/kcms
+%dir %{_libdir}/qt5/plugins/plasma/kcms/systemsettings
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_access.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_baloofile.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_componentchooser.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_kded.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_keyboard.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_keys.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_landingpage.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_mouse.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_smserver.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_splashscreen.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_tablet.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_touchpad.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_workspace.so
+%dir %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_activities.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_clock.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_desktoppaths.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_device_automounter.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_joystick.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_qtquicksettings.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_solid_actions.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcmspellchecking.so
+%dir %{_libdir}/qt5/plugins/plasma/kcms/desktop
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/desktop/kcm_krunnersettings.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_plasmasearch.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_recentFiles.so
+%attr(755,root,root) %{_bindir}/plasma-emojier
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_touchscreen.so
+
+%files data -f %{kpname}.lang
+%defattr(644,root,root,755)
 %{_desktopdir}/org.kde.knetattach.desktop
 %{_desktopdir}/org.kde.plasma.emojier.desktop
 %{_datadir}/config.kcfg/kactivitymanagerd_plugins_settings.kcfg
@@ -321,17 +375,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/solid/devices/solid-device-StorageAccess.desktop
 %{_datadir}/solid/devices/solid-device-StorageDrive.desktop
 %{_datadir}/solid/devices/solid-device-StorageVolume.desktop
-%attr(755,root,root) %{_libdir}/qt5/plugins/attica_kde.so
 %dir %{_datadir}/accounts/providers
 %dir %{_datadir}/accounts/providers/kde
 %{_datadir}/accounts/providers/kde/opendesktop.provider
 %{_datadir}/accounts/services/kde/opendesktop-rating.service
 %attr(755,root,root) %{_datadir}/kconf_update/kcminputrc_fix_botched_5_21_0.py
 %{_datadir}/kconf_update/kcminputrc_fix_botched_5_21_0.upd
-
-%dir %{_libdir}/qt5/qml/org/kde/plasma/emoji
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/emoji/libEmojierDeclarativePlugin.so
-%{_libdir}/qt5/qml/org/kde/plasma/emoji/qmldir
 %{_datadir}/config.kcfg/landingpage_kdeglobalssettings.kcfg
 %dir %{_datadir}/kpackage/kcms/kcm_landingpage
 %dir %{_datadir}/kpackage/kcms/kcm_landingpage/contents
@@ -341,39 +390,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/main.qml
 %{_datadir}/qlogging-categories5/kcm_kded.categories
 %{_datadir}/qlogging-categories5/kcm_keyboard.categories
-%{_libdir}/qt5/plugins/kf5/kded/kded_touchpad.so
 %{_datadir}/plasma/plasmoids/org.kde.plasma.kickoff
 %{_datadir}/plasma/services/touchpad.operations
 %{_datadir}/plasma/desktoptheme/default/icons/touchpad.svg
 %{_datadir}/plasma/plasmoids/touchpad
-
-%dir %{_libdir}/qt5/plugins/plasma/kcminit
-%{_libdir}/qt5/plugins/plasma/kcminit/kcm_mouse_init.so
-%{_libdir}/qt5/plugins/plasma/kcminit/kcm_touchpad_init.so
-%dir %{_libdir}/qt5/plugins/plasma/kcms
-%dir %{_libdir}/qt5/plugins/plasma/kcms/systemsettings
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_access.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_baloofile.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_componentchooser.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_kded.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_keyboard.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_keys.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_landingpage.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_mouse.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_smserver.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_splashscreen.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_tablet.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_touchpad.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_workspace.so
-%dir %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_activities.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_clock.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_desktoppaths.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_device_automounter.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_joystick.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_qtquicksettings.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_solid_actions.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcmspellchecking.so
 %{_desktopdir}/kcm_access.desktop
 %{_desktopdir}/kcm_activities.desktop
 %{_desktopdir}/kcm_baloofile.desktop
@@ -418,8 +438,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kcmmouse
 %{_datadir}/kcmmouse/cursor*.pcf.gz
 %{_datadir}/kcmmouse/pics
-%dir %{_libdir}/qt5/plugins/plasma/kcms/desktop
-%{_libdir}/qt5/plugins/plasma/kcms/desktop/kcm_krunnersettings.so
 %{_desktopdir}/kcm_krunnersettings.desktop
 %{_datadir}/config.kcfg/krunnersettingsbase.kcfg
 %{_datadir}/config.kcfg/workspaceoptions_kwinsettings.kcfg
@@ -427,9 +445,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents
 %dir %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents/ui
 %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents/ui/main.qml
-
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_plasmasearch.so
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_recentFiles.so
 %{_desktopdir}/kcm_landingpage.desktop
 %{_desktopdir}/kcm_recentFiles.desktop
 %dir %{_datadir}/kf5/kcm_recentFiles
@@ -446,9 +461,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.kde.plasma.activitypager.appdata.xml
 %dir %{_datadir}/plasma/plasmoids/org.kde.plasma.activitypager
 %{_datadir}/plasma/plasmoids/org.kde.plasma.activitypager/metadata.json
-
-%attr(755,root,root) %{_bindir}/plasma-emojier
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_touchscreen.so
 %{_desktopdir}/kcm_touchscreen.desktop
 %dir %{_datadir}/kpackage/kcms/kcm_touchscreen
 %dir %{_datadir}/kpackage/kcms/kcm_touchscreen/contents
