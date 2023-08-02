@@ -4,18 +4,18 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.27.6
+%define		kdeplasmaver	5.27.7
 %define		qtver		5.15.2
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.27.6
+Version:	5.27.7
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	d8526d1748e7cc93f8fcc225a9858801
+# Source0-md5:	b8f2c72d4d0ffd37573c1f949e8604aa
 URL:		https://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -26,7 +26,7 @@ BuildRequires:	Qt5Sql-devel >= %{qtver}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
 BuildRequires:	Qt5X11Extras-devel >= %{qtver}
 BuildRequires:	boost-devel
-BuildRequires:	cmake >= 2.8.12
+BuildRequires:	cmake >= 3.16.0
 BuildRequires:	docbook-dtd45-xml
 BuildRequires:	docbook-style-xsl
 BuildRequires:	fontconfig-devel
@@ -109,15 +109,13 @@ Dane dla %{kpname}.
 %setup -q -n %{kpname}-%{version}
 
 %build
-install -d build
 rm -rf po/id
-cd build
-%cmake -G Ninja \
+%cmake -B build \
+	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	-DHTML_INSTALL_DIR=%{_kdedocdir} \
-	../
-%ninja_build
+	-DHTML_INSTALL_DIR=%{_kdedocdir}
+%ninja_build -C build
 
 %if %{with tests}
 ctest
