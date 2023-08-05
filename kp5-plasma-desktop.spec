@@ -10,12 +10,12 @@
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.27.7
+Version:	5.27.7.1
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	b8f2c72d4d0ffd37573c1f949e8604aa
+# Source0-md5:	7f7d2bea26b4d825c9a6e8d57e400a4a
 URL:		https://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
