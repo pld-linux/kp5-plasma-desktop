@@ -4,27 +4,26 @@
 # TODO:
 # PackageKit qt5
 #
-%define		kdeplasmaver	5.27.10
+%define		kdeplasmaver	5.93.0
 %define		qtver		5.15.2
 %define		kpname		plasma-desktop
 
 Summary:	KDE Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.27.10
-Release:	1
+Version:	5.93.0
+Release:	0.1
 License:	LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	2417bb974152d4f2274ebe3b7b524ca8
+Source0:	https://download.kde.org/unstable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+# Source0-md5:	0e6b7c122f0b0171d5669eae6aa3e113
 URL:		https://www.kde.org/
 BuildRequires:	AppStream-qt-devel
-BuildRequires:	Qt5Concurrent-devel >= %{qtver}
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
-BuildRequires:	Qt5Quick-devel >= %{qtver}
-BuildRequires:	Qt5Sql-devel >= %{qtver}
-BuildRequires:	Qt5Svg-devel >= %{qtver}
-BuildRequires:	Qt5X11Extras-devel >= %{qtver}
+BuildRequires:	Qt6Concurrent-devel >= %{qtver}
+BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6PrintSupport-devel >= %{qtver}
+BuildRequires:	Qt6Quick-devel >= %{qtver}
+BuildRequires:	Qt6Sql-devel >= %{qtver}
+BuildRequires:	Qt6Svg-devel >= %{qtver}
 BuildRequires:	boost-devel
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	docbook-dtd45-xml
@@ -32,44 +31,42 @@ BuildRequires:	docbook-style-xsl
 BuildRequires:	fontconfig-devel
 BuildRequires:	ibus-devel
 BuildRequires:	ka5-kaccounts-integration-devel
-BuildRequires:	kf5-attica-devel
-BuildRequires:	kf5-baloo-devel
-BuildRequires:	kf5-extra-cmake-modules
-BuildRequires:	kf5-kactivities-devel
-BuildRequires:	kf5-kactivities-stats-devel
-BuildRequires:	kf5-karchive-devel
-BuildRequires:	kf5-kauth-devel
-BuildRequires:	kf5-kcmutils-devel
-BuildRequires:	kf5-kconfigwidgets-devel
-BuildRequires:	kf5-kdbusaddons-devel
-BuildRequires:	kf5-kdeclarative-devel
-BuildRequires:	kf5-kded-devel
-BuildRequires:	kf5-kdelibs4support-devel
-BuildRequires:	kf5-kdoctools-devel
-BuildRequires:	kf5-kglobalaccel-devel
-BuildRequires:	kf5-ki18n-devel
-BuildRequires:	kf5-kirigami2-devel
-BuildRequires:	kf5-knewstuff-devel
-BuildRequires:	kf5-knotifications-devel
-BuildRequires:	kf5-knotifyconfig-devel
-BuildRequires:	kf5-kpeople-devel
-BuildRequires:	kf5-krunner-devel
-BuildRequires:	kf5-kservice-devel
-BuildRequires:	kf5-kwallet-devel
-BuildRequires:	kf5-kwindowsystem-devel
-BuildRequires:	kf5-kxmlgui-devel
-BuildRequires:	kf5-plasma-framework-devel
-BuildRequires:	kf5-qqc2-desktop-style-devel
+BuildRequires:	kf6-attica-devel
+BuildRequires:	kf6-baloo-devel
+BuildRequires:	kf6-extra-cmake-modules
+BuildRequires:	kf6-karchive-devel
+BuildRequires:	kf6-kauth-devel
+BuildRequires:	kf6-kcmutils-devel
+BuildRequires:	kf6-kconfigwidgets-devel
+BuildRequires:	kf6-kdbusaddons-devel
+BuildRequires:	kf6-kdeclarative-devel
+BuildRequires:	kf6-kded-devel
+BuildRequires:	kf6-kdoctools-devel
+BuildRequires:	kf6-kglobalaccel-devel
+BuildRequires:	kf6-ki18n-devel
+BuildRequires:	kf6-kirigami-devel
+BuildRequires:	kf6-knewstuff-devel
+BuildRequires:	kf6-knotifications-devel
+BuildRequires:	kf6-knotifyconfig-devel
+BuildRequires:	kf6-kpeople-devel
+BuildRequires:	kf6-krunner-devel
+BuildRequires:	kf6-kservice-devel
+BuildRequires:	kf6-kwallet-devel
+BuildRequires:	kf6-kwindowsystem-devel
+BuildRequires:	kf6-kxmlgui-devel
+BuildRequires:	kf6-qqc2-desktop-style-devel
 BuildRequires:	kp5-breeze-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-kscreenlocker-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-kwin-devel >= %{kdeplasmaver}
 BuildRequires:	kp5-libksysguard-devel >= %{kdeplasmaver}
+BuildRequires:	kp5-plasma-activities-devel
+BuildRequires:	kp5-plasma-activities-stats-devel
 BuildRequires:	kp5-plasma-workspace-devel >= %{kdeplasmaver}
-BuildRequires:	libaccounts-qt5-devel
+BuildRequires:	libaccounts-qt6-devel
 BuildRequires:	libcanberra-devel
-BuildRequires:	libsignon-qt5-devel
+BuildRequires:	libsignon-qt6-devel
 BuildRequires:	ninja
-BuildRequires:	phonon-qt5-devel
+BuildRequires:	phonon-qt6-devel
 BuildRequires:	pulseaudio-devel
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	scim-devel
@@ -84,11 +81,11 @@ BuildRequires:	xorg-lib-libXcursor-devel
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-xserver-server-devel
 BuildRequires:	xz
-Requires:	/bin/awk
 Requires:	%{name}-data = %{version}-%{release}
+Requires:	/bin/awk
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		qt5dir		%{_libdir}/qt5
+%define		qt6dir		%{_libdir}/qt6
 
 %description
 KDE Plasma Desktop.
@@ -131,17 +128,6 @@ rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/{sr,sr@latin}
 
 %find_lang %{kpname} --all-name --with-kde
 
-find $RPM_BUILD_ROOT%{_datadir}/kconf_update -type f -name "*.awk" \
--exec sed -i -e 's#/usr/bin/awk#/bin/awk#' '{}' +
-
-sed -i -e 's#/usr/bin/env bash#/bin/bash#' $RPM_BUILD_ROOT%{_datadir}/kconf_update/kcm_rename_plasma_desktop.sh
-
-find $RPM_BUILD_ROOT%{_datadir}/kconf_update -type f -name "*.py" \
--exec sed -i -e 's#/usr/bin/env python3#/usr/bin/python3#' '{}' +
-
-find $RPM_BUILD_ROOT%{_datadir}/kconf_update -type f -name "*.py" \
--exec sed -i -e 's#/usr/bin/env python#/usr/bin/python3#' '{}' +
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -158,81 +144,83 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/krunner-plugininstaller
 %attr(755,root,root) %{_bindir}/solid-action-desktop-gen
 %attr(755,root,root) %{_bindir}/tastenbrett
-%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/device_automounter.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/keyboard.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/krunner/krunner_kwin.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/krunner/krunner_plasma-desktop.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/dataengine/plasma_engine_touchpad.so
-%dir %{_libdir}/qt5/qml/org/kde/activities/settings
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/activities/settings/libkactivitiessettingsplugin.so
-%{_libdir}/qt5/qml/org/kde/activities/settings/qmldir
-%dir %{_libdir}/qt5/qml/org/kde/plasma/activityswitcher
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/activityswitcher/libactivityswitcherextensionplugin.so
-%{_libdir}/qt5/qml/org/kde/plasma/activityswitcher/qmldir
-%dir %{_libdir}/qt5/qml/org/kde/plasma/private/kimpanel
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/private/kimpanel/libkimpanelplugin.so
-%{_libdir}/qt5/qml/org/kde/plasma/private/kimpanel/qmldir
-%dir %{_libdir}/qt5/qml/org/kde/plasma/private/pager
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/private/pager/libpagerplugin.so
-%{_libdir}/qt5/qml/org/kde/plasma/private/pager/qmldir
-%dir %{_libdir}/qt5/qml/org/kde/plasma/private/showdesktop
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/private/showdesktop/libshowdesktopplugin.so
-%{_libdir}/qt5/qml/org/kde/plasma/private/showdesktop/qmldir
-%dir %{_libdir}/qt5/qml/org/kde/plasma/private/taskmanager
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/private/taskmanager/libtaskmanagerplugin.so
-%{_libdir}/qt5/qml/org/kde/plasma/private/taskmanager/qmldir
-%dir %{_libdir}/qt5/qml/org/kde/plasma/private/trash
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/private/trash/libtrashplugin.so
-%{_libdir}/qt5/qml/org/kde/plasma/private/trash/qmldir
-%dir %{_libdir}/qt5/qml/org/kde/private/desktopcontainment
-%dir %{_libdir}/qt5/qml/org/kde/private/desktopcontainment/desktop
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/private/desktopcontainment/desktop/libdesktopplugin.so
-%{_libdir}/qt5/qml/org/kde/private/desktopcontainment/desktop/qmldir
-%dir %{_libdir}/qt5/qml/org/kde/private/desktopcontainment/folder
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/private/desktopcontainment/folder/libfolderplugin.so
-%{_libdir}/qt5/qml/org/kde/private/desktopcontainment/folder/qmldir
-%attr(755,root,root) %{_prefix}/libexec/kauth/kcmdatetimehelper
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/device_automounter.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/keyboard.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/krunner/krunner_kwin.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/krunner/krunner_plasma-desktop.so
+%dir %{_libdir}/qt6/qml/org/kde/plasma/activityswitcher
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/activityswitcher/libactivityswitcherextensionplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/activityswitcher/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/kimpanel
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/kimpanel/libkimpanelplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/kimpanel/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/pager
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/pager/libpagerplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/pager/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/showdesktop
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/showdesktop/libshowdesktopplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/showdesktop/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/taskmanager
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/taskmanager/libtaskmanagerplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/taskmanager/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/trash
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/trash/libtrashplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/trash/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/private/desktopcontainment
+%dir %{_libdir}/qt6/qml/org/kde/private/desktopcontainment/desktop
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/private/desktopcontainment/desktop/libdesktopplugin.so
+%{_libdir}/qt6/qml/org/kde/private/desktopcontainment/desktop/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/private/desktopcontainment/folder
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/private/desktopcontainment/folder/libfolderplugin.so
+%{_libdir}/qt6/qml/org/kde/private/desktopcontainment/folder/qmldir
 %attr(755,root,root) %{_prefix}/libexec/kimpanel-ibus-panel
 %attr(755,root,root) %{_prefix}/libexec/kimpanel-ibus-panel-launcher
 %attr(755,root,root) %{_prefix}/libexec/kimpanel-scim-panel
-%attr(755,root,root) %{_libdir}/qt5/plugins/attica_kde.so
-%dir %{_libdir}/qt5/qml/org/kde/plasma/emoji
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/emoji/libEmojierDeclarativePlugin.so
-%{_libdir}/qt5/qml/org/kde/plasma/emoji/qmldir
-%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/kded_touchpad.so
-%dir %{_libdir}/qt5/plugins/plasma/kcminit
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcminit/kcm_mouse_init.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcminit/kcm_touchpad_init.so
-%dir %{_libdir}/qt5/plugins/plasma/kcms
-%dir %{_libdir}/qt5/plugins/plasma/kcms/systemsettings
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_access.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_baloofile.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_componentchooser.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_kded.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_keyboard.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_keys.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_landingpage.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_mouse.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_smserver.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_splashscreen.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_tablet.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_touchpad.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_workspace.so
-%dir %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_activities.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_clock.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_desktoppaths.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_device_automounter.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_joystick.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_qtquicksettings.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_solid_actions.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcmspellchecking.so
-%dir %{_libdir}/qt5/plugins/plasma/kcms/desktop
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/desktop/kcm_krunnersettings.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_plasmasearch.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_recentFiles.so
+%dir %{_libdir}/qt6/qml/org/kde/plasma/emoji
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/emoji/libEmojierDeclarativePlugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/emoji/qmldir
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/kded_touchpad.so
+%dir %{_libdir}/qt6/plugins/plasma/kcminit
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcminit/kcm_mouse_init.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcminit/kcm_touchpad_init.so
+%dir %{_libdir}/qt6/plugins/plasma/kcms
+%dir %{_libdir}/qt6/plugins/plasma/kcms/systemsettings
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_access.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_baloofile.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_componentchooser.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_kded.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_keyboard.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_keys.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_landingpage.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mouse.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_smserver.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_splashscreen.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_tablet.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_touchpad.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_workspace.so
+%dir %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_clock.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_device_automounter.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_qtquicksettings.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_solid_actions.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcmspellchecking.so
+%dir %{_libdir}/qt6/plugins/plasma/kcms/desktop
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/desktop/kcm_krunnersettings.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_plasmasearch.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_recentFiles.so
 %attr(755,root,root) %{_bindir}/plasma-emojier
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_touchscreen.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_touchscreen.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_activities.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_desktoppaths.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_gamecontroller.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma5support/dataengine/plasma_engine_touchpad.so
+%{_libdir}/qt6/qml/org/kde/plasma/activityswitcher/activityswitcherextensionplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/activityswitcher/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/plasma/emoji/EmojierDeclarativePlugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/emoji/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/plasma/private/kcm_keyboard/libkcm_keyboard_declarative.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/kcm_keyboard/qmldir
+%attr(755,root,root) %{_prefix}/libexec/kf6/kauth/kcmdatetimehelper
 
 %files data -f %{kpname}.lang
 %defattr(644,root,root,755)
@@ -270,34 +258,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kcmkeys/wm3.kksrc
 %dir %{_datadir}/kcmsolidactions
 %{_datadir}/kcmsolidactions/solid-action-template.desktop
-%attr(755,root,root) %{_datadir}/kconf_update/kcminputrc_migrate_repeat_value.py
-%{_datadir}/kconf_update/kcminputrc_repeat.upd
-%attr(755,root,root) %{_datadir}/kconf_update/ksmserver_update_loginMode_value.py
-%{_datadir}/kconf_update/ksmserver_update_loginMode_value.upd
-%attr(755,root,root) %{_datadir}/kconf_update/kxkb_variants.awk
-%{_datadir}/kconf_update/kxkb_variants.upd
-%dir %{_datadir}/kf5/kactivitymanagerd
-%dir %{_datadir}/kf5/kactivitymanagerd/workspace
-%dir %{_datadir}/kf5/kactivitymanagerd/workspace/settings
-%dir %{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml
-%dir %{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab
-%dir %{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog
-%{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab/ActivitiesView.qml
-%{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab/main.qml
-%{_datadir}/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog/GeneralTab.qml
 %{_datadir}/kglobalaccel/org.kde.plasma.emojier.desktop
-%{_datadir}/knotifications5/kaccess.notifyrc
-%{_datadir}/knotifications5/kcm_touchpad.notifyrc
 %{_datadir}/knsrcfiles/krunner.knsrc
 %{_datadir}/knsrcfiles/ksplash.knsrc
-%{_datadir}/kpackage/kcms/kcm5_kded
-%{_datadir}/kpackage/kcms/kcm_baloofile
-%{_datadir}/kpackage/kcms/kcm_componentchooser
-%{_datadir}/kpackage/kcms/kcm_keys
-%{_datadir}/kpackage/kcms/kcm_smserver
-%{_datadir}/kpackage/kcms/kcm_splashscreen
-%{_datadir}/kpackage/kcms/kcm_workspace
-%{_datadir}/kservicetypes5/solid-device-type.desktop
 %{_datadir}/metainfo/org.kde.desktopcontainment.appdata.xml
 %{_datadir}/metainfo/org.kde.desktoptoolbox.appdata.xml
 %{_datadir}/metainfo/org.kde.paneltoolbox.appdata.xml
@@ -338,7 +301,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/plasma/packages/org.kde.desktoptoolbox/contents/config
 %dir %{_datadir}/plasma/packages/org.kde.desktoptoolbox/contents/ui
 %{_datadir}/plasma/packages/org.kde.desktoptoolbox/contents/config/main.xml
-%{_datadir}/plasma/packages/org.kde.desktoptoolbox/contents/ui/ToolBoxRoot.qml
 %{_datadir}/plasma/packages/org.kde.desktoptoolbox/metadata.json
 %dir %{_datadir}/plasma/packages/org.kde.paneltoolbox
 %dir %{_datadir}/plasma/packages/org.kde.paneltoolbox/contents
@@ -362,7 +324,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/plasmoids/org.kde.plasma.windowlist
 %{_datadir}/plasma/shells/org.kde.plasma.desktop
 %{_datadir}/polkit-1/actions/org.kde.kcontrol.kcmclock.policy
-%{_datadir}/qlogging-categories5/kcmkeys.categories
 %{_datadir}/solid/devices/solid-device-Battery.desktop
 %{_datadir}/solid/devices/solid-device-Block.desktop
 %{_datadir}/solid/devices/solid-device-Camera.desktop
@@ -373,21 +334,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/solid/devices/solid-device-StorageAccess.desktop
 %{_datadir}/solid/devices/solid-device-StorageDrive.desktop
 %{_datadir}/solid/devices/solid-device-StorageVolume.desktop
-%dir %{_datadir}/accounts/providers
-%dir %{_datadir}/accounts/providers/kde
-%{_datadir}/accounts/providers/kde/opendesktop.provider
-%{_datadir}/accounts/services/kde/opendesktop-rating.service
-%attr(755,root,root) %{_datadir}/kconf_update/kcminputrc_fix_botched_5_21_0.py
-%{_datadir}/kconf_update/kcminputrc_fix_botched_5_21_0.upd
 %{_datadir}/config.kcfg/landingpage_kdeglobalssettings.kcfg
-%dir %{_datadir}/kpackage/kcms/kcm_landingpage
-%dir %{_datadir}/kpackage/kcms/kcm_landingpage/contents
-%dir %{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui
-%{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/MostUsedIcon.qml
-%{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/Thumbnail.qml
-%{_datadir}/kpackage/kcms/kcm_landingpage/contents/ui/main.qml
-%{_datadir}/qlogging-categories5/kcm_kded.categories
-%{_datadir}/qlogging-categories5/kcm_keyboard.categories
 %{_datadir}/plasma/plasmoids/org.kde.plasma.kickoff
 %{_datadir}/plasma/services/touchpad.operations
 %{_datadir}/plasma/desktoptheme/default/icons/touchpad.svg
@@ -398,7 +345,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kcm_clock.desktop
 %{_desktopdir}/kcm_componentchooser.desktop
 %{_desktopdir}/kcm_desktoppaths.desktop
-%{_desktopdir}/kcm_joystick.desktop
 %{_desktopdir}/kcm_kded.desktop
 %{_desktopdir}/kcm_keyboard.desktop
 %{_desktopdir}/kcm_keys.desktop
@@ -412,57 +358,30 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kcm_touchpad.desktop
 %{_desktopdir}/kcm_workspace.desktop
 %{_desktopdir}/kcmspellchecking.desktop
-%attr(755,root,root) %{_datadir}/kconf_update/kcm_rename_plasma_desktop.sh
-%{_datadir}/kconf_update/kcm_rename_plasma_desktop.upd
-%{_datadir}/kconf_update/kxkb.upd
-%attr(755,root,root) %{_datadir}/kconf_update/kxkb_emptylists.awk
-%attr(755,root,root) %{_datadir}/kconf_update/kxkb_resetoptions.awk
-%dir %{_datadir}/kpackage/kcms/kcm_access
-%dir %{_datadir}/kpackage/kcms/kcm_access/contents
-%dir %{_datadir}/kpackage/kcms/kcm_access/contents/ui
-%{_datadir}/kpackage/kcms/kcm_access/contents/ui/Bell.qml
-%{_datadir}/kpackage/kcms/kcm_access/contents/ui/KeyboardFilters.qml
-%{_datadir}/kpackage/kcms/kcm_access/contents/ui/ModifierKeys.qml
-%{_datadir}/kpackage/kcms/kcm_access/contents/ui/MouseNavigation.qml
-%{_datadir}/kpackage/kcms/kcm_access/contents/ui/ScreenReader.qml
-%{_datadir}/kpackage/kcms/kcm_access/contents/ui/main.qml
-%dir %{_datadir}/kpackage/kcms/kcm_tablet
-%dir %{_datadir}/kpackage/kcms/kcm_tablet/contents
-%dir %{_datadir}/kpackage/kcms/kcm_tablet/contents/ui
-%{_datadir}/kpackage/kcms/kcm_tablet/contents/ui/main.qml
-%{_datadir}/plasma/packages/org.kde.desktoptoolbox/contents/ui/ToolBoxContent.qml
-%{_datadir}/qlogging-categories5/kcm_tablet.categories
-%{_datadir}/qlogging-categories5/kcm_mouse.categories
 %dir %{_datadir}/kcmmouse
 %{_datadir}/kcmmouse/cursor*.pcf.gz
 %{_datadir}/kcmmouse/pics
 %{_desktopdir}/kcm_krunnersettings.desktop
 %{_datadir}/config.kcfg/krunnersettingsbase.kcfg
 %{_datadir}/config.kcfg/workspaceoptions_kwinsettings.kcfg
-%dir %{_datadir}/kpackage/kcms/kcm_krunnersettings
-%dir %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents
-%dir %{_datadir}/kpackage/kcms/kcm_krunnersettings/contents/ui
-%{_datadir}/kpackage/kcms/kcm_krunnersettings/contents/ui/main.qml
 %{_desktopdir}/kcm_landingpage.desktop
 %{_desktopdir}/kcm_recentFiles.desktop
-%dir %{_datadir}/kf5/kcm_recentFiles
-%dir %{_datadir}/kf5/kcm_recentFiles/workspace
-%dir %{_datadir}/kf5/kcm_recentFiles/workspace/settings
-%dir %{_datadir}/kf5/kcm_recentFiles/workspace/settings/qml
-%dir %{_datadir}/kf5/kcm_recentFiles/workspace/settings/qml/recentFiles
-%{_datadir}/kf5/kcm_recentFiles/workspace/settings/qml/recentFiles/BlacklistApplicationView.qml
-%dir %{_datadir}/kpackage/kcms/kcm_plasmasearch
-%dir %{_datadir}/kpackage/kcms/kcm_plasmasearch/contents
-%dir %{_datadir}/kpackage/kcms/kcm_plasmasearch/contents/ui
-%{_datadir}/kpackage/kcms/kcm_plasmasearch/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_tablet/contents/ui/Output.qml
 %{_datadir}/metainfo/org.kde.plasma.activitypager.appdata.xml
 %dir %{_datadir}/plasma/plasmoids/org.kde.plasma.activitypager
 %{_datadir}/plasma/plasmoids/org.kde.plasma.activitypager/metadata.json
 %{_desktopdir}/kcm_touchscreen.desktop
-%dir %{_datadir}/kpackage/kcms/kcm_touchscreen
-%dir %{_datadir}/kpackage/kcms/kcm_touchscreen/contents
-%dir %{_datadir}/kpackage/kcms/kcm_touchscreen/contents/ui
-%{_datadir}/kpackage/kcms/kcm_touchscreen/contents/ui/main.qml
+%{_desktopdir}/kaccess.desktop
+%{_desktopdir}/kcm_gamecontroller.desktop
+%{_datadir}/kcm_recentFiles/workspace/settings/qml/recentFiles/BlacklistApplicationView.qml
+%{_datadir}/knotifications6/kaccess.notifyrc
+%{_datadir}/knotifications6/kcm_touchpad.notifyrc
 %{_datadir}/plasma/emoji
-%{_datadir}/qlogging-categories5/kcm_touchscreen.categories
+%{_datadir}/plasma/packages/org.kde.desktoptoolbox/contents/ui/ToolBoxContent.qml
+%{_datadir}/plasma/packages/org.kde.desktoptoolbox/contents/ui/main.qml
+%{_datadir}/qlogging-categories6/kcm_gamecontroller.categories
+%{_datadir}/qlogging-categories6/kcm_kded.categories
+%{_datadir}/qlogging-categories6/kcm_keyboard.categories
+%{_datadir}/qlogging-categories6/kcm_mouse.categories
+%{_datadir}/qlogging-categories6/kcm_tablet.categories
+%{_datadir}/qlogging-categories6/kcm_touchscreen.categories
+%{_datadir}/qlogging-categories6/kcmkeys.categories
